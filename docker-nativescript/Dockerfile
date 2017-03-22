@@ -6,9 +6,10 @@ apt-get update && \
 apt-get install -y lib32stdc++6 lib32z1 lib32ncurses5 lib32bz2-1.0 g++ ant python make
 
 RUN curl -sL https://deb.nodesource.com/setup_iojs_2.x | sudo bash - && sudo apt-get install -y iojs
-
+RUN apt-get install unzip
 # download and extract android sdk
-RUN curl http://dl.google.com/android/android-sdk_r24.2-linux.tgz | tar xz -C /usr/local/
+#RUN curl http://dl.google.com/android/android-sdk_r24.2-linux.tgz | tar xz -C /usr/local/
+RUN wget -qO- -O tmp.zip https://dl.google.com/android/repository/tools_r25.2.3-linux.zip && unzip tmp.zip -d /usr/local/android-sdk-linux/ && rm tmp.zip
 ENV ANDROID_HOME /usr/local/android-sdk-linux
 ENV PATH $PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 

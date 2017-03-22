@@ -22,6 +22,7 @@ Here is the relevant blog post: http://oren.github.io/blog/nativescript.html
     cd docker-nativescript
     docker build -t nativescript .
     alias tns='docker run -it --rm --privileged -v /dev/bus/usb:/dev/bus/usb -v $PWD:/src nativescript tns'
+    alias tns='docker run -it --rm --privileged -v /dev/bus/usb:/dev/bus/usb -v $PWD:/src jankopacek/docker-nativescript tns'
 
 The alias command lets you use `tns` for running any command inside the nativescript container.
 
