@@ -1,6 +1,6 @@
-FROM kallikrein/node:0.12.4
+FROM jankopacek/node
 
-MAINTAINER Thomas Charlat
+MAINTAINER Jan Kopacek
 
   # Install Java.
 RUN \
@@ -14,5 +14,3 @@ RUN \
   # Define commonly used JAVA_HOME variable
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 
-# install cordova
-RUN npm i -g cordova@5.1.1
